@@ -6,7 +6,8 @@ export const findAllLocations = async () => {
 };
 
 export const findLocationById = async ({ id }: FindByIdType) => {
-  return await RestaurantModel.findOne({ location_id: id });
+  const location = await RestaurantModel.findOne({ location_id: id });
+  return location;
 };
 
 export const findWishListLocations = async ({ userId }: WishListType) => {
