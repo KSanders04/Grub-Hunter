@@ -1,6 +1,7 @@
 import mongoose, { InferSchemaType } from "mongoose";
 
 const restaurantSchema = new mongoose.Schema({
+  _id: { type: String, required: true },
   address: { type: String, required: true },
   zipcode: { type: String, required: true },
   borough: { type: String, required: true },

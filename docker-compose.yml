@@ -19,6 +19,8 @@ services:
     volumes:
       - ./code:/home/node/code
     working_dir: /home/node/code/grubhunter
+    env_file:
+      - ./code/grubhunter/.env.local
     environment:
       - HOST=0.0.0.0
       - CHOKIDAR_USEPOLLING=true
@@ -26,6 +28,6 @@ services:
     depends_on:
       - backend
     tty: true
-    command: 'npm run dev'
+    command: sh -c "npm install && npm run dev"
 volumes:
   mongodb_data_container:
